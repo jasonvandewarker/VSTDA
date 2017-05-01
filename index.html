@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>VSTDA</title>
+
+  <link rel="stylesheet" href="/app/styles/styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+</head>
+
+<body ng-controller="vstda as vm">
+  <script src="bower_components/angular/angular.js"></script>
+
+  <h1>Very Simple To-Do App</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">To Do</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="todoitem" placeholder="To Do">
+            </div>
+          </div>
+        </form>
+        <label for="selectmenu">Set Priority</label>
+        <select class="form-control">
+  <option>High</option>
+  <option>Medium</option>
+  <option>Low</option>
+
+</select>
+        <button type="button" class="btn btn-primary btn-lg">Stuff To Be Done</button>
+      </div>
+      <div class="col">
+
+        <button type="button" class="btn btn-danger">High Priority</button>
+
+        <button type="button" class="btn btn-info">Medium Priority</button>
+
+        <button type="button" class="btn btn-success">Low Priority</button>
+
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+    <script src="/app/app.js"></script>
+</body>
+
+</html>

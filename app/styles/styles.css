@@ -18,3 +18,7 @@ h1 {
 #bigbutton {
   margin-top: 15px;
 }
+
+#buttons {
+  width: 100%;
+}

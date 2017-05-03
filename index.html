@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet">
 </head>
-
+<!-- sets the controller -->
 <body ng-controller="VstdaController as vm">
   <script src="bower_components/angular/angular.js"></script>
 
@@ -35,13 +35,14 @@
           <option value="2">Medium</option>
           <option value="3">Low</option>
         </select>
-
+<!-- This button has a click event that connects with the function in the controller that creates the array. -->
         <button type="button" id="bigbutton" class="btn btn-primary btn-lg" ng-click="vm.postList()">Stuff To Be Done</button>
       </div>
       <!-- second column -->
       <div class="col-md-8">
         <!-- button group -->
         <div id="buttons" class="btn-group">
+<!-- Each of these buttons creates a click event that sorts the list items -->
           <button type="button" class="btn btn-primary" ng-click="sort = 'priority'">Highest Priority First</button>
           <button type="button" class="btn btn-primary" ng-click="sort = '-priority'">Lowest Priority First</button>
           <button type="button" class="btn btn-primary" ng-click="sort = 'sortType'">Sort Alphabetically</button>
@@ -49,7 +50,8 @@
           <ul> Do this stuff:
             <li ng-repeat="data in vm.toDoArray | orderBy: sort" ng-class="::{'High': vm.toDoObject.priority==1, 'Medium': vm.toDoObject.priority==2, 'Low': vm.toDoObject.priority==3}">{{data.toDo}}</li>
           </ul>
-
+<!-- this li is dynamically made from the array created from the input and select menu. The class is set by the value of the select menu item choses
+and corresponds to a CSS class that changes the background color.  -->
       </div>
     </div>
   </div>

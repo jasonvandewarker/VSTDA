@@ -17,7 +17,6 @@
 
         function postList() {
             vm.toDoArray.push({ toDo: vm.toDoObject.toDoInput, priority: vm.toDoObject.priority });
-
         }
 
     }

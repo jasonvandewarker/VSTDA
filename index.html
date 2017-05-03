@@ -9,7 +9,7 @@
 
   <link rel="stylesheet" href="/app/styles/styles.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-
+  <link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet">
 </head>
 
 <body ng-controller="VstdaController as vm">
@@ -21,40 +21,42 @@
       <div class="col-md-4">
         <form class="form-horizontal">
           <div class="form-group">
-            <label for="input">To Do</label>
 
+            <!-- input box -->
+            <label for="input">What to do?</label>
             <input type="text" class="form-control" id="todoitem" placeholder="To Do" ng-model="vm.toDoObject.toDoInput">
           </div>
-
         </form>
-        <label for="selectmenu">Set Priority</label>
+
+        <!-- select menu -->
+        <label for="selectmenu">What's the priority level?</label>
         <select class="form-control" ng-model="vm.toDoObject.priority">
-          <option value="high">High</option>
-          <option value="medium">Medium</option>
-          <option value="low">Low</option>
-
-
+          <option value="1">High</option>
+          <option value="2">Medium</option>
+          <option value="3">Low</option>
         </select>
+
         <button type="button" id="bigbutton" class="btn btn-primary btn-lg" ng-click="vm.postList()">Stuff To Be Done</button>
       </div>
+      <!-- second column -->
       <div class="col-md-8">
+        <!-- button group -->
         <div id="buttons" class="btn-group">
-          <button type="button" class="btn btn-danger">High Priority</button>
-          <button type="button" class="btn btn-info">Medium Priority</button>
-          <button type="button" class="btn btn-success">Low Priority</button>
-
-
-          <ul> To Do:
-            <li ng-repeat="data in vm.toDoArray">{{data.toDo}}</li>
+          <button type="button" class="btn btn-primary" ng-click="sort = 'priority'">Highest Priority First</button>
+          <button type="button" class="btn btn-primary" ng-click="sort = '-priority'">Lowest Priority First</button>
+          <button type="button" class="btn btn-primary" ng-click="sort = 'sortType'">Sort Alphabetically</button>
+          </div>
+          <ul> Do this stuff:
+            <li ng-repeat="data in vm.toDoArray | orderBy: sort" ng-class="::{'High': vm.toDoObject.priority==1, 'Medium': vm.toDoObject.priority==2, 'Low': vm.toDoObject.priority==3}">{{data.toDo}}</li>
           </ul>
-        </div>
+
       </div>
     </div>
   </div>
-  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.js " integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin=" anonymous "></script>
 
-  <script src="/app/app.js"></script>
-  <script src="/app/vstda.controller.js"></script>
+  <script src="/app/app.js "></script>
+  <script src="/app/vstda.controller.js "></script>
 </body>
 
 </html>
